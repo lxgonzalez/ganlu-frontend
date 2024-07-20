@@ -1,0 +1,44 @@
+<div class="custom-toolbar">
+  <span class="custom-title">Add {{data.name}}</span>
+</div>
+
+<form [formGroup]="form" (submit)="operate()">
+  <div class="container">
+    <mat-form-field class="form-field">
+      <mat-label>Description</mat-label>
+      <input
+        matInput
+        placeholder="Salida al Cine"
+        formControlName="description"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label>Subtotal</mat-label>
+      <input
+        type="number"
+        matInput
+        placeholder="20.22"
+        formControlName="subtotal"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <mat-label>Category</mat-label>
+      <mat-select disableRipple  formControlName="category" required>
+        @for (a of categories; track a.idCategory){
+          <mat-option value="{{a.idCategory}}">
+            <mat-icon>{{a.logo}}</mat-icon>
+            <span>{{a.categoryName}}</span>
+          </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <div class="actions">
+      <button mat-raised-button color="primary">Done</button>
+      <button mat-raised-button color="warn" type="button" (click)="close()">Cancel</button>
+    </div>
+  </div>
+</form>

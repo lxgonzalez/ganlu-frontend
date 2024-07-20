@@ -1,0 +1,17 @@
+mat-toolbar{
+  position: relative;
+  box-shadow: 10px 5px 5px black;
+}
+.sidenav-content{
+  padding: 24px;
+}
+
+mat-sidenav-container{
+  height: calc(100vh - 68px);
+}
+
+mat-sidenav, mat-sidenav-content{
+  transition: all 400ms ease-in-out
+}
+
+

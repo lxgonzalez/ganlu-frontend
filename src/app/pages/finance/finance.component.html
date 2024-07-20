@@ -1,0 +1,22 @@
+  <mat-form-field>
+    <mat-label>Date</mat-label>
+    <mat-select [(ngModel)]="monthYearSelected">
+      @for (m of monthYearList; track m) {
+        <mat-option [value]="m">{{m.monthFinance}} - {{m.yearFinance}}</mat-option>
+      }
+    </mat-select>
+
+  </mat-form-field>
+  <button mat-button (click)="submitData()">Submit</button>
+    @if(monthlyFinance != null){
+<!--      <p>Salary {{monthlyFinance.salary}}</p>-->
+<!--      <p>Total {{monthlyFinance.total}}</p>-->
+      <div fxLayout="row wrap" fxLayoutGap="20px grid">
+        @for (d of monthlyFinance.distributions; track d){
+          <div fxFlex="33%" fxFlex.xs="100%">
+            <app-distribution [distribution]="d"></app-distribution>
+          </div>
+        }
+      </div>
+    }
+

@@ -1,0 +1,14 @@
+/*.content >mat-card{*/
+/*  width: 400px;*/
+/*}*/
+
+mat-card-footer{
+  padding: 1em;
+}
+
+.description{
+  flex: 1;
+  margin-left: 1em;
+}
+
+

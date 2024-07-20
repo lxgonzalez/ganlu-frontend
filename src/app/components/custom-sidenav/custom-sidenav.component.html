@@ -1,0 +1,21 @@
+<div class="sidenav-header" [class.hide-sidenav-text]="collapsed()">
+  <img src="https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2018/01/breaking_bad_vince_gilligan_amc.jpg?fit=1000%2C667&quality=50&strip=all&ssl=1" alt="Img" [width]="profilePicSize()" [height]="profilePicSize()">
+  <div class="header-text" [class.hide-header-text]="collapsed()">
+    <h2>Walter White</h2>
+    <p>Breaking Bad</p>
+  </div>
+</div>
+<mat-nav-list>
+  @for (m of menuItems(); track m.label){
+    <a
+      mat-list-item
+      [routerLink]="m.route"
+      routerLinkActive
+      #rla = "routerLinkActive"
+      [activated]="rla.isActive"
+    >
+      <mat-icon matListItemIcon>{{m.icon}}</mat-icon>
+      <span>{{m.label}}</span>
+    </a>
+  }
+</mat-nav-list>
